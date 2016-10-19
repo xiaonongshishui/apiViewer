@@ -6,10 +6,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 var Parameter = React.createClass({
 	handleSubmit:function(){
 		let _this=this;
+		_this.props.setFlag(true);
 		$.get({
 			url:_this.props.activeApi.source,
 			success:function(data){
-				_this.props.setData(data);
+				_this.props.setFlag(false);
+				_this.props.setData(_this.props.activeId,data);
 			}
 		});
 	},
@@ -25,7 +27,7 @@ var Parameter = React.createClass({
 				)
 		})}
 		<div style={{float:"right"}}>
-		<RaisedButton label="submit" primary={true} onClick={this.handleSubmit}/>
+		<RaisedButton label="submit" secondary={true} onClick={this.handleSubmit}/>
 		</div>
 		</div>
 			

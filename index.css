@@ -1,0 +1,17 @@
+/*pagination*/
+.pagination{
+	position:relative;
+}
+.pagination li{
+	display:inline-block;
+	border:1px solid #E91E63;
+	width:40px;
+	height:30px;
+	margin:3px;
+	background-color:#FCE4EC;
+	text-align:center;
+	line-height:30px;
+	border-radius:3px;
+	cursor:pointer;
+	color: #E91E63;
+}

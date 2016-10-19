@@ -22,6 +22,7 @@ var AddApi = React.createClass({
   handleClose:function(){
   	var obj=Object.assign({},this.state);
   	obj.open = false;
+    obj.parameters = [];
   	this.setState(obj);
   },
   addApi:function(){
@@ -35,7 +36,8 @@ var AddApi = React.createClass({
   	var newApi = {
   		name:name,
   		source:source,
-  		parameters:parameters
+  		parameters:parameters,
+      startLoad:false
   	};
   	this.props.handleAddApi(newApi);
   	this.setState({
